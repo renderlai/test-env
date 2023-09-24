@@ -1,8 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './page.module.css';
+import { useEffect } from 'react';
 
 export default function Home() {
-  console.log('custom env: ' + process.env.NEXT_PUBLIC_ENV);
+  useEffect(() => {
+    console.log('custom env: ' + process.env.NEXT_PUBLIC_ENV);
+    console.log('custom environment: ' + process.env.NEXT_PUBLIC_ENVIRONMENT);
+  }, []);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -10,6 +16,8 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
+        <p>custom env: {process.env.NEXT_PUBLIC_ENV}</p>
+        <p>custom environment: {process.env.NEXT_PUBLIC_ENVIRONMENT}</p>
         <div>
           <a
             href='https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
