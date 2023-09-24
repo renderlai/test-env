@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
+  console.log('custom env: ' + process.env.NEXT_PUBLIC_ENV);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -16,7 +17,7 @@ export default function Home() {
             rel='noopener noreferrer'>
             By{' '}
             <Image
-              src='/nextjs-github-pages/vercel.svg'
+              src='/test-env/vercel.svg'
               alt='Vercel Logo'
               className={styles.vercelLogo}
               width={100}
@@ -30,7 +31,7 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src='/next.svg'
+          src='/test-env/next.svg'
           alt='Next.js Logo'
           width={180}
           height={37}
